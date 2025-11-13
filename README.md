@@ -1,76 +1,85 @@
 # MINI-PROJECT-5
-# Multiclass Fish Image Classification
-📘 Project Overview
+# 🐟 Multiclass Fish Image Classification using Deep Learning & Streamlit
 
-The Multiclass Fish Image Classification project focuses on classifying images of fish into multiple species using Deep Learning. It involves training a CNN model from scratch and applying Transfer Learning with pre-trained architectures to achieve higher accuracy. The project is deployed as a Streamlit web app that allows users to upload images and receive instant predictions.
+This project focuses on classifying multiple species of fish using deep learning.  
+Five state-of-the-art CNN models were trained and compared:
 
-🧠 Skills Demonstrated
+- **VGG16**
+- **ResNet50**
+- **MobileNetV2**
+- **NASNetMobile**
+- **EfficientNetB0**
 
-Deep Learning
+The model with the best validation accuracy was selected and saved as  
+`best_fish_model.h5`.
 
-Python
+A **Streamlit Web App** is built to allow users to upload fish images and see:
 
-TensorFlow / Keras
+- Top 5 predicted classes  
+- Probability scores  
+- Final predicted fish species  
 
-Data Preprocessing & Augmentation
+---
 
-Transfer Learning
+## 📂 Project Features
 
-Model Evaluation & Visualization
+✔ Multi-model training & comparison  
+✔ Automatic model selection  
+✔ Streamlit-based interactive UI  
+✔ Image preprocessing & augmentation  
+✔ GPU-accelerated training (Colab)  
+✔ Real-time prediction with probability visualization  
 
-Streamlit Deployment
+---
 
-Model Comparison & Saving
+## 🧠 Model Workflow
 
-🎯 Problem Statement
+1. Load and preprocess dataset  
+2. Train 5 CNN models  
+3. Compare validation accuracies  
+4. Save best-performing model  
+5. Load model in Streamlit  
+6. Predict top-5 fish categories  
 
-To develop an automated system that classifies fish images into predefined categories. The goal is to build an accurate and efficient classification model using both custom and pre-trained CNN architectures.
+---
 
-💼 Business Use Cases
+## 📦 Dataset Structure
 
-Enhanced Accuracy – Identify the best-performing model for fish classification.
+Your dataset should follow this format:
 
-Deployment Ready – Deliver a user-friendly Streamlit web app for real-time fish recognition.
-
-Model Comparison – Evaluate and compare models to select the optimal approach for deployment.
-
-⚙️ Approach
-1. Data Preprocessing and Augmentation
-
-Rescaled images to the [0, 1] range.
-
-Applied augmentation techniques like rotation, zoom, and horizontal flips.
-
-2. Model Training
-
-Trained a CNN from scratch.
-
-Fine-tuned five pre-trained models:
-
-VGG16
-
-ResNet50
-
-MobileNet
-
-InceptionV3
-
-EfficientNetB0
-
-Saved the best-performing model (.h5 or .pkl) for deployment.
-
-3. Model Evaluation
-
-Compared metrics: Accuracy, Precision, Recall, F1-score, Confusion Matrix.
-
-Visualized training history (accuracy & loss) for each model.
-
-4. Deployment
-
-Built a Streamlit web app for:
 
 Uploading images
 
 Predicting fish category
 
 Displaying model confidence scores
+
+Dataset/
+│── train/
+│ ├── Black_Sea_Sprat/
+│ ├── Gilt_Head_Bream/
+│ ├── Hourse_Mackerel/
+│ ├── Red_Mullet/
+│ ├── Sea_Bass/
+│ ├── Striped_Red_Mullet/
+│ ├── Trout/
+│ ├── ...
+│
+│── val/
+│ ├── same class folders as train/
+
+
+---
+
+## 🖼 Streamlit App
+
+Upload an image → get predictions like:
+
+📊 Prediction Results (Top 5):
+Black_Sea_Sprat: 100.00%
+Gilt_Head_Bream: 0.00%
+Striped_Red_Mullet: 0.00%
+Sea_Bass: 0.00%
+Trout: 0.00%
+
+✅ Predicted Fish: Black_Sea_Sprat
